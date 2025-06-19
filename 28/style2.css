@@ -1,0 +1,309 @@
+header {
+    background-color: #fff;
+    position: relative;
+    z-index: 9997;
+    transition: all 200ms cubic-bezier(0.77, 0, 0.175, 1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999
+}
+
+header.hide {
+    opacity: 0;
+    transform: translate(0, -100%)
+}
+
+header #hd-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    height: 140px;
+    background-color: #fff
+}
+
+@media screen and (max-width: 999px) {
+    header #hd-main {
+        height:60px;
+        padding: 0
+    }
+}
+
+header #hd-main.scrolled {
+    top: 0;
+    height: 90px;
+    animation: fadeIn .3 ease 0s 1 normal
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@media screen and (max-width: 999px) {
+    header #hd-main.scrolled {
+        height:60px
+    }
+}
+
+header #hd-main.scrolled::before {
+    width: 100%
+}
+
+@media screen and (max-width: 1200px) {
+    header #hd-main .logo {
+        padding-left:30px
+    }
+}
+
+@media screen and (max-width: 999px) {
+    header #hd-main .logo {
+        padding-left:25px
+    }
+}
+
+header #hd-main .logo img {
+    width: 179px;
+    height: auto
+}
+
+@media screen and (max-width: 999px) {
+    header #hd-main .logo img {
+        width:120px
+    }
+}
+
+header #hd-main #burger-trg {
+    display: none;
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
+    padding-top: 4px;
+    background-color: #fff;
+    border-radius: 9999px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    right: 10px
+}
+
+@media screen and (max-width: 999px) {
+    header #hd-main #burger-trg {
+        display:flex
+    }
+}
+
+header #hd-main #burger-trg .burger-ic {
+    flex-basis: 9px;
+    width: 24px;
+    height: 24px;
+    position: relative
+}
+
+header #hd-main #burger-trg .burger-ic::before,header #hd-main #burger-trg .burger-ic::after {
+    content: "";
+    background-color: #000;
+    width: 14px;
+    height: 2px;
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    transition: all .2s;
+    transform-origin: center center
+}
+
+header #hd-main #burger-trg .burger-ic::before {
+    transform: translate(0, -4px)
+}
+
+header #hd-main #burger-trg .burger-ic::after {
+    transform: translate(0, 4px)
+}
+
+header #hd-main #burger-trg .txt {
+    margin-top: 14px;
+    font-family: "A1ゴシック M","a-otf-midashi-go-mb31-pr6n","sans-serif";
+    font-weight: bold;
+    font-size: 10px;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: .15em
+}
+
+header #hd-main #burger-trg.act .burger-ic::before {
+    transform: translate(0, 0) rotate(-45deg)
+}
+
+header #hd-main #burger-trg.act .burger-ic::after {
+    transform: translate(0, 0) rotate(45deg)
+}
+
+header #global-nav {
+    background-color: #fff;
+    z-index: 9998
+}
+
+@media screen and (max-width: 1200px) {
+    header #global-nav {
+        padding-right:30px
+    }
+}
+
+@media screen and (max-width: 999px) {
+    header #global-nav {
+        padding-right:0
+    }
+}
+
+header #global-nav>ul {
+    display: flex;
+    justify-content: start;
+    margin: auto;
+    padding-left: 30px;
+    height: 100%
+}
+
+@media screen and (max-width: 767px) {
+    header #global-nav>ul {
+        padding:0 20px
+    }
+}
+
+header #global-nav>ul>li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 15px 15px 15px 15px;
+    position: relative
+}
+
+header #global-nav>ul>li>a {
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    font-family: "sofia-pro","sans-serif";
+    letter-spacing: .15em;
+    transition: background-color 200ms ease
+}
+
+header #global-nav>ul>li>a::before {
+    content: "";
+    position: absolute;
+    background: #000;
+    width: 0;
+    height: 0;
+    left: 0;
+    bottom: 2px;
+    transition: width 300ms ease-out
+}
+
+header #global-nav>ul>li>a.act,header #global-nav>ul>li>a:hover {
+    text-decoration: none;
+    position: relative
+}
+
+header #global-nav>ul>li>a.act::before,header #global-nav>ul>li>a:hover::before {
+    width: 100%;
+    height: 1px
+}
+
+@media screen and (max-width: 999px) {
+    header #global-nav>ul>li>a.act::before,header #global-nav>ul>li>a:hover::before {
+        width:0
+    }
+}
+
+header #global-nav>ul>li:last-child {
+    padding: 15px 0 15px 15px
+}
+
+@media screen and (max-width: 999px) {
+    header #global-nav>ul>li:last-child {
+        padding:0
+    }
+}
+
+header #global-nav>ul>li:last-child a {
+    color: #81b4ad
+}
+
+header #global-nav>ul>li:last-child a::before {
+    background: #81b4ad
+}
+
+@media screen and (max-width: 999px) {
+    header #global-nav {
+        display:none;
+        background-color: #f8f8f8;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+        z-index: 2;
+        height: auto;
+        overflow: scroll;
+        max-height: 100vh;
+        padding-bottom: 70px;
+        padding-top: 30px
+    }
+
+    header #global-nav>ul {
+        display: block;
+        max-height: calc(100vh - 65px);
+        width: 100%;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch
+    }
+
+    header #global-nav>ul>li {
+        position: relative;
+        width: 100%;
+        padding: 0
+    }
+
+    header #global-nav>ul>li>a {
+        height: auto;
+        display: block;
+        width: 100%;
+        font-size: 15px;
+        line-height: 1.2;
+        padding: 15px 0
+    }
+}
+
+@media screen and (max-width: 999px)and (max-width: 320px) {
+    header #global-nav>ul>li>a {
+        font-size:13px
+    }
+}
+
+#content {
+    padding-top: 140px
+}
+
+@media screen and (max-width: 999px) {
+    #content {
+        padding-top:60px
+    }
+}
+
+/*# sourceMappingURL=header.css.map */
